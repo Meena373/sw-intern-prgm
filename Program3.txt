@@ -1,0 +1,21 @@
+ No need to write a program. Just pseudocode is enough.Define a class for a instagram post. Define the properties and functions.
+Define which one will be private and which one public. 
+
+class instagram{
+	private String user;
+private String caption;
+private String URL;
+private int like;
+private int comment;
+
+  public Instagram(String user, String caption, String URL,int like, int comment) {
+        this.user = user;
+        this.caption = caption;
+        this.URL = imageURL;
+        this.like = like;
+        this.comment = comment;
+    }
+//Getter and setter for all the properties..
+
+//All properties are private,they can only be accessed within the class.This is to protect the data from outside of the class.
+}

@@ -1,0 +1,60 @@
+1.Write a program for the following.
+start with the input number n.
+For even number , divide by 2 (n/2)
+For odd number - 3n + 1
+apply the above for the resulting number until the answer is 1.
+
+Eg, input is 8
+output 8, 4,2, 1
+
+input is 9
+output 9,28,14,7,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1
+Get two numbers as input. Print the number that has less number of steps to reach 1.
+
+ANS:
+
+public class Mainfunction{
+public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enterfirst number: ");
+
+        int number1 = scanner.nextInt();
+        System.out.print("Entersecond number: ");
+
+        int nummber2 = scanner.nextInt();
+         int checknum1 = find(number1);
+          int checknum2 = find(number2);
+
+    }
+private static void find(int n) {
+        System.out.print(n + " ");
+        while (n != 1) {
+            if (n % 2 == 0) {
+                n /= 2;
+            } else {
+                n = 3 * n + 1;
+            }
+            System.out.print(n + " ");
+        }
+        System.out.println();
+    }
+}
+
+// output
+//Enterfirst number: 8
+//Entersecond number: 9
+//8 4 2 1
+//9 28 14 7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
+
+// Enterfirst number: 10
+//Entersecond number: 15
+//10 5 16 8 4 2 1
+// 15 46 23 70 35 106 53 160 80 40 20 10 5 16 8 4 2 1
+
+// Enterfirst number: 37
+//Entersecond number: 64
+// 37 112 56 28 14 7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
+// 64 32 16 8 4 2 1
+
+

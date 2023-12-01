@@ -1,0 +1,33 @@
+Encode the user input using the following alg, using the encode Key (a number)
+
+For each word in the odd position, move each letter in the word by the number of positions mentioned in the key.
+For words in the even position, reverse the word and then do the same as the odd position
+
+Ans:
+public class encodekey{
+
+    public static void main(String[] args) {
+        String sentence = "I am the King";
+        int key = 2;
+        String[] words = sentence.split(" ");
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            if (i % 2 == 0) {
+                word = new StringBuilder(word).reverse().toString();
+            }
+
+            for (int j = 0; j < word.length(); j++) {
+                char c = word.charAt(j);
+                int newcharindex = (c + key) % 26;
+                char newchar = (char) ('a' + newcharindex);
+                word = word.replace(c, newchar);
+            }
+            EncodedSentence =+ word;
+        }
+        encodedSentence = encodedSentence.trim();
+        System.out.println(EncodedSentence);
+    }
+}
+//output 
+input sentence "I am the King"
+Output K oc vjg ipkM

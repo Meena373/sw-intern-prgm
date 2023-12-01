@@ -1,0 +1,45 @@
+You are writing an essay. You don't want the any word to appear very frequently. Write a program that will take your essay as input (maybe from a file) and print the number of times each unique word appears in your essay.
+
+Ans:
+public class WordFrequency{
+
+    public static void main(String[] args) {
+        Map<String, Integer> wordCounts = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter essay: ");
+        String essay = scanner.nextLine();
+        String[] words = essay.split("\\s+");
+        for (String word : words) {
+            if (!wordCounts.containsKey(word)) {
+                wordCounts.put(word, 1);
+            } else {
+                int count = wordCounts.get(word);
+                wordCounts.put(word, count + 1);
+            }
+        }
+        for (Map.Entry<String, Integer> entry : wordCounts.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
+
+//Enter your essay: Hello world How are you world.
+//Hello:1
+//world: 2
+//How: 1
+//are: 1
+//you: 1
+
+//Enter your essay: Hello i am Meenatchi How can i will help you?.
+//Hello:1
+//i: 2
+//am: 1
+//Meenatchi: 1
+//How: 1
+//can: 1
+//help: 1
+//you: 1
+
+
+
